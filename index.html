@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="header">
+        <h1>My Library</h1>
+    </div>
+    <table class="tbl">
+        <colgroup>
+            <col span="1">
+            <col span="1">
+            <col span="1">
+            <col span="1">
+            <col span="1">
+        </colgroup>
+        <thead>
+            <tr>
+                <th colspan="5">Library</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr id="details">
+                <td>Name</td>
+                <td>Author</td>
+                <td>Pages</td>
+                <td>Read</td>
+            </tr>
+        </tbody>
+    </table>
+    <button class="newBook">New Book</button>
+    <div class="container">
+        <form action="" method="post" id="newForm">
+        <div class="bookName">
+            <input type="text" name="name" id="name" placeholder="The Lord of the Rings" required>
+            <label for="name">Book Name</label>
+        </div>
+        <div class="authorName">
+            <input type="text" name="author" id="author" placeholder="J.R.R Tolkien" required>
+            <label for="author">Author Name</label>
+        </div>
+        <div class="pages">
+            <input type="text" name="pages" id="pages" placeholder="1178 pages" required>
+            <label for="pages">Number of Pages</label>
+        </div>
+        <div class="read">
+            <div>
+                <input type="radio" name="read" id="read" value="true">
+                <label for="read">Read</label>
+            </div>
+            <div>
+                <input type="radio" name="read" id="notread" value="false">
+                <label for="notread">Not read yet</label>
+            </div>
+        </div>
+        <button type="submit" id="submitButton">Submit Book</button>
+    </form>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
