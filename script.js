@@ -52,7 +52,7 @@ function addBooksToLibrary() { // Loops through the array of myLibrary and adds 
         tableCell4.appendChild(divCell)
         tableBody.lastChild.appendChild(tableCell4)
         
-        let readBtn = document.createElement("button")
+        let readBtn = document.createElement("button") // Adds a read button displaying if the book has been read or not
         readBtn.classList.add("readBtn")
         if (tableCell4.innerText === "true") {
             readBtn.style.backgroundColor = "green"
@@ -65,6 +65,7 @@ function addBooksToLibrary() { // Loops through the array of myLibrary and adds 
         let removeBook = document.createElement("button")
         removeBook.innerText = "Remove"
         removeBook.classList.add("removeBook")
+
         removeBook.addEventListener("click", (e) => { // Removes books from myLibrary array and the table
             removeBook.parentNode.parentNode.remove()
             let removeButtons = document.getElementsByClassName("removeBook")
@@ -86,7 +87,7 @@ const subButton = document.querySelector("#submitButton")
 function read() { // Adds an event listener to every read button to change the read status of each book on the table
     for (let r = 0; r < readButtons.length; r++) {
         readButtons[r].addEventListener("click", (e) => {
-            myLibrary[r].haveRead()
+            myLibrary[r].haveRead() // Changes the read status of each object
             if (e.target.offsetParent.firstChild.textContent === "false"){
                         e.target.offsetParent.firstChild.textContent = "true"
                         e.target.style.backgroundColor = "green"
@@ -127,7 +128,7 @@ form.addEventListener("formdata", (e) => {
     let bookToAdd = new Book(bookArray[0], bookArray[1], bookArray[2], bookArray[3]) // makes the array elements into an object and pushes it into myLibrary
     myLibrary.push(bookToAdd)
 
-    for(let i = 0; i < 1; i++) { // Creates the table row and button for the book
+    for(let i = 0; i < 1; i++) { // Creates the table row and buttons for the added book
         let tableBody = document.querySelector("tbody")
         let tableRow = document.createElement("tr")
         tableBody.appendChild(tableRow)
@@ -161,7 +162,8 @@ form.addEventListener("formdata", (e) => {
 
         }
         tableCell4.appendChild(readBtn)
-        readBtn.addEventListener("click", (e) => {
+        
+        readBtn.addEventListener("click", (e) => { // Event listener for the read button that changes the objects/table read status and the color of the button
             let rbContainer = Array.from(readButtons)
             myLibrary[rbContainer.length - 1].haveRead()
 
@@ -202,8 +204,8 @@ form.addEventListener("formdata", (e) => {
 
 const newBookButton = document.querySelector(".newBook")
 const container = document.querySelector(".container")
-container.style.display = "none";
+container.style.display = "none"; // Hides the submit form
 
-newBookButton.addEventListener("click", () => {
+newBookButton.addEventListener("click", () => { // Shows the submit form
     container.style.display = "block";
 })
